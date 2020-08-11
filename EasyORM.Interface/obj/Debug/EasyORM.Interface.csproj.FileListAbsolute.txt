@@ -1,0 +1,5 @@
+E:\Code\EasyORM\EasyORM.Interface\bin\Debug\EasyORM.Interface.dll
+E:\Code\EasyORM\EasyORM.Interface\bin\Debug\EasyORM.Interface.pdb
+E:\Code\EasyORM\EasyORM.Interface\obj\Debug\EasyORM.Interface.csprojAssemblyReference.cache
+E:\Code\EasyORM\EasyORM.Interface\obj\Debug\EasyORM.Interface.dll
+E:\Code\EasyORM\EasyORM.Interface\obj\Debug\EasyORM.Interface.pdb

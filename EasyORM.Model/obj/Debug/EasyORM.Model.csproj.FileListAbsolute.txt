@@ -1,0 +1,5 @@
+E:\Code\EasyORM\EasyORM.Model\bin\Debug\EasyORM.Model.dll
+E:\Code\EasyORM\EasyORM.Model\bin\Debug\EasyORM.Model.pdb
+E:\Code\EasyORM\EasyORM.Model\obj\Debug\EasyORM.Model.csprojAssemblyReference.cache
+E:\Code\EasyORM\EasyORM.Model\obj\Debug\EasyORM.Model.dll
+E:\Code\EasyORM\EasyORM.Model\obj\Debug\EasyORM.Model.pdb
