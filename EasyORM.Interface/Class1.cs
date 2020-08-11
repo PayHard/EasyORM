@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace EasyORM.Interface
 {
-    public class Class1
+    public interface SqlDBInterface
     {
+        //public string ConnectionString;
     }
 }

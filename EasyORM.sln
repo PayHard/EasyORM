@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyORM.Interface", "EasyOR
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E8735C48-6827-401E-A74B-1F43C5044056}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyORM.Service", "EasyORM.Service\EasyORM.Service.csproj", "{EBBF5187-ED13-40D5-9600-DE50D2C61038}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{805F72EF-651C-4DB1-BD3B-FB1D5A9CEACB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{805F72EF-651C-4DB1-BD3B-FB1D5A9CEACB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{805F72EF-651C-4DB1-BD3B-FB1D5A9CEACB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBBF5187-ED13-40D5-9600-DE50D2C61038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBBF5187-ED13-40D5-9600-DE50D2C61038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBBF5187-ED13-40D5-9600-DE50D2C61038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBBF5187-ED13-40D5-9600-DE50D2C61038}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
