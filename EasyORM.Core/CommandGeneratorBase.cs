@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EasyORM.Core
 {
-    internal class CommandGeneratorBase
+    public abstract class CommandGeneratorBase
     {
         internal SqlContext Context;
 
@@ -19,5 +19,7 @@ namespace EasyORM.Core
             _propertiesDic.AddOrUpdate(type, type.GetProperties());
             return _propertiesDic[type];
         }
+
+        public abstract string Add<TEntity>(TEntity entity) where TEntity : class;
     }
 }

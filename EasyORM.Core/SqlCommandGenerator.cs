@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace EasyORM.Core
 {
-    internal class SqlCommandGenerator: CommandGeneratorBase
+    public class SqlCommandGenerator: CommandGeneratorBase
     {
-        public string Add<TEntity>(TEntity entity)
+        public override string Add<TEntity>(TEntity entity)
         {
             Context.TableName = TableAttribute.GetName(typeof(TEntity));
             Context.Parameters = new Dictionary<string, object>();

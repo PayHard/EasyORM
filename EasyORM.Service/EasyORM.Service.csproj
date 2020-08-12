@@ -45,6 +45,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EasyORM.Core\EasyORM.Core.csproj">
+      <Project>{1bda04c9-1a5a-41b2-b8ab-da60e20a98b7}</Project>
+      <Name>EasyORM.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EasyORM.Model\EasyORM.Model.csproj">
       <Project>{632fd74b-ab83-4c36-b150-c5fd89e84da8}</Project>
       <Name>EasyORM.Model</Name>
