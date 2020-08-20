@@ -41,7 +41,15 @@ namespace EasyORM.Service
 
         public void Add(List<TEntity> entityList)
         {
-
+            conn.Open();
+            foreach (var item in entityList)
+            {
+                var sqlText = SqlCommandGenerator.Add(item);
+                //执行
+                ExecuteNonQuery(sqlText);
+            }
+            //释放
+            conn.Close();
         }
 
         #endregion

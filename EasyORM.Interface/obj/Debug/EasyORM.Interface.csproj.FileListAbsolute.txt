@@ -7,4 +7,3 @@ F:\Code\EasyORM\EasyORM.Interface\obj\Debug\EasyORM.Interface.dll
 F:\Code\EasyORM\EasyORM.Interface\obj\Debug\EasyORM.Interface.pdb
 F:\Code\EasyORM\EasyORM.Interface\bin\Debug\EasyORM.Interface.dll
 F:\Code\EasyORM\EasyORM.Interface\bin\Debug\EasyORM.Interface.pdb
-F:\Code\EasyORM\EasyORM.Interface\obj\Debug\EasyORM.Interface.csprojAssemblyReference.cache
