@@ -93,7 +93,37 @@ namespace EasyORM.Core
 
         public override string Update<TEntity>(TEntity entity)
         {
-            return null;
+            Context.TableName = TableAttribute.GetName(typeof(TEntity));
+            Context.Parameters = new Dictionary<string, object>();
+
+            StringBuilder builder_front = new StringBuilder(), builder_behind = new StringBuilder();
+            builder_front.Append("UPDATE ");
+            builder_front.Append(Context.TableName);
+            builder_front.Append(" SET ");
+
+            PropertyInfo[] propertyInfos = GetPropertiesDicByType(typeof(TEntity));
+            string columnName = string.Empty;
+            foreach (PropertyInfo propertyInfo in propertyInfos)
+            {
+                //Column
+                if (propertyInfo.GetCustomAttribute(typeof(ColumnAttribute), true) is ColumnAttribute column)
+                {
+                    builder_front.Append(column.GetName(propertyInfo.Name));
+                    builder_front.Append("=");
+                    builder_front.Append($"@t");
+                    columnName = column.GetName(propertyInfo.Name).Replace("[", "").Replace("]", "");
+                    builder_front.Append(columnName);
+                    builder_front.Append(",");
+                    Context.Parameters.AddOrUpdate($"@t{columnName}", propertyInfo.GetValue(entity));
+                }
+                //in the end,remove the redundant symbol of ','
+                if (propertyInfos.Last() == propertyInfo)
+                {
+                    builder_front.Remove(builder_front.Length - 1, 1);
+                }
+            }
+            //传入生成的sql语句
+            return Context.SqlText = builder_front.Append(builder_behind.ToString()).ToString().TrimEnd();
         }
 
         public override string Query<TEntity>()
