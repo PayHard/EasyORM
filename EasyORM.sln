@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E8735C48-6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyORM.Service", "EasyORM.Service\EasyORM.Service.csproj", "{EBBF5187-ED13-40D5-9600-DE50D2C61038}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Sql", "Test.Sql\Test.Sql.csproj", "{1709BA62-399F-4B8A-A04E-6F447BC3738A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,9 +37,16 @@ Global
 		{EBBF5187-ED13-40D5-9600-DE50D2C61038}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBBF5187-ED13-40D5-9600-DE50D2C61038}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBBF5187-ED13-40D5-9600-DE50D2C61038}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1709BA62-399F-4B8A-A04E-6F447BC3738A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1709BA62-399F-4B8A-A04E-6F447BC3738A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1709BA62-399F-4B8A-A04E-6F447BC3738A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1709BA62-399F-4B8A-A04E-6F447BC3738A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1709BA62-399F-4B8A-A04E-6F447BC3738A} = {E8735C48-6827-401E-A74B-1F43C5044056}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {482EB896-D5A9-42A3-B5E3-4B4346C46253}
