@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EasyORM.Core
 {
-    class SqlContext
+    public class SqlContext
     {
         public string TableName { get; set; }
         /// <summary>

@@ -9,9 +9,10 @@ using EasyORM.Core;
 
 namespace EasyORM.Service
 {
-    public class SqlDBService<TEntity>where TEntity:class
+    public class SqlDBService<TEntity> where TEntity : class
     {
         SqlConnection conn;
+        public SqlDBService() { }
         public SqlDBService(ConnStr conStr)
         {
             conn = new SqlConnection($"Data Source={conStr.DataSource};Initial Catalog={conStr.InitialCatalog};User ID={conStr.UserId};Password={conStr.Password};");
@@ -22,7 +23,7 @@ namespace EasyORM.Service
             conn = new SqlConnection(conStr);
         }
 
-        internal SqlCommandGenerator SqlCommandGenerator;
+        internal SqlCommandGenerator SqlCommandGenerator = new SqlCommandGenerator();
 
         #region 添加
 
@@ -95,7 +96,7 @@ namespace EasyORM.Service
             //验证参数
 
             //拼装数据库语句
-            
+            //var sqlText = SqlCommandGenerator.Query();
             //执行
             conn.Open();
             //ExecuteNonQuery();
@@ -117,6 +118,10 @@ namespace EasyORM.Service
         {
             //创建命令对象，指定要执行sql语句与连接对象conn
             SqlCommand cmd = new SqlCommand(sqlText, conn);
+            foreach(var item in SqlCommandGenerator.Context.Parameters)
+            {
+                cmd.Parameters.Add(new SqlParameter(item.Key, item.Value));
+            }
             //执行,返回影响行数
             int rows = cmd.ExecuteNonQuery();
             return rows;

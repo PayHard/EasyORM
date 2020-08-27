@@ -10,7 +10,7 @@ namespace EasyORM.Core
 {
     public abstract class CommandGeneratorBase
     {
-        internal SqlContext Context;
+        public SqlContext Context=new SqlContext();
 
         /// <summary>
         /// 列集合

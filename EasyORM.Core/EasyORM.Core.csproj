@@ -43,6 +43,9 @@
   <ItemGroup>
     <Compile Include="EntityAttribute\ColumnAttribute.cs" />
     <Compile Include="CommandGeneratorBase.cs" />
+    <Compile Include="EntityAttribute\DataBaseAttribute.cs" />
+    <Compile Include="EntityAttribute\TableAttribute.cs" />
+    <Compile Include="EntityAttribute\AutoAttribute.cs" />
     <Compile Include="EntityAttribute\OrderByAttribute.cs" />
     <Compile Include="EntityAttribute\KeyAttribute.cs" />
     <Compile Include="Enum\OrderBy.cs" />
@@ -51,7 +54,6 @@
     <Compile Include="SqlCommandGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlContext.cs" />
-    <Compile Include="TableAttribute.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

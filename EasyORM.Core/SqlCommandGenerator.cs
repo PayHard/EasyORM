@@ -45,6 +45,9 @@ namespace EasyORM.Core
             string columnName = string.Empty;
             foreach (PropertyInfo propertyInfo in propertyInfos)
             {
+                //自增字段不拼进字段
+                if (propertyInfo.GetCustomAttribute(typeof(AutoAttribute), true) is AutoAttribute)
+                    continue;
                 //Column
                 if (propertyInfo.GetCustomAttribute(typeof(ColumnAttribute), true) is ColumnAttribute column)
                 {
@@ -56,16 +59,14 @@ namespace EasyORM.Core
                     builder_behind.Append(",");
                     Context.Parameters.AddOrUpdate($"@{columnName}", propertyInfo.GetValue(entity));
                 }
-
-                //in the end,remove the redundant symbol of ','
-                if (propertyInfos.Last() == propertyInfo)
-                {
-                    builder_front.Remove(builder_front.Length - 1, 1);
-                    builder_front.Append(")");
-                    builder_behind.Remove(builder_behind.Length - 1, 1);
-                    builder_behind.Append(")");
-                }
             }
+
+            //去除末尾‘,’
+            builder_front.Remove(builder_front.Length - 1, 1);
+            builder_front.Append(")");
+            builder_behind.Remove(builder_behind.Length - 1, 1);
+            builder_behind.Append(")");
+
             //传入生成的sql语句
             return Context.SqlText = builder_front.Append(builder_behind.ToString()).ToString().TrimEnd();
         }
