@@ -1,20 +1,19 @@
 ﻿using EasyORM.Core;
 using EasyORM.Service;
 using System.Linq;
-using NUnit.Framework;
+using Xunit;
 
 namespace Test.Sql
 {
-    [TestFixture]
-    public class Test_SqlCommandGenerator : SqlDBService<TestClass1>
+    public class Test_SqlCommandGenerator2 : SqlDBService<TestClass1>
     {
         public static string connStr = "Data Source=192.168.10.196;Initial Catalog=sqlStudy;User ID=sa;Password=sa123456;";
-        public Test_SqlCommandGenerator() :base(connStr)
+        public Test_SqlCommandGenerator2() :base(connStr)
         {
         }
-
-        [Test]
-        public void Add()
+        
+        [Fact]
+        public void Add_Test()
         {
             base.Add(new TestClass1()
             {
@@ -29,22 +28,19 @@ namespace Test.Sql
             //var aa = new[] { "@xingming", "@nianling", "@yuegongzi", "@bumenhao", "@dianhaua", "@bangongshi" };
             //var bb = SqlCommandGenerator.Context.Parameters.Keys.ToArray();
             //Assert.AreEqual(aa, bb);
-            Assert.AreEqual(new[] { "@xingming", "@nianling", "@yuegongzi", "@bumenhao", "@dianhaua", "@bangongshi" }, SqlCommandGenerator.Context.Parameters.Keys.ToArray());
-            Assert.AreEqual("INSERT INTO zhigong (xingming,nianling,yuegongzi,bumenhao,dianhaua,bangongshi) VALUES (@xingming,@nianling,@yuegongzi,@bumenhao,@dianhaua,@bangongshi)", SqlCommandGenerator.Context.SqlText);
+            Assert.Equal(new []{ "@xingming", "@nianling", "@yuegongzi", "@bumenhao", "@dianhaua","@bangongshi" }, SqlCommandGenerator.Context.Parameters.Keys.ToArray());
+            Assert.Equal("INSERT INTO zhigong (xingming,nianling,yuegongzi,bumenhao,dianhaua,bangongshi) VALUES (@xingming,@nianling,@yuegongzi,@bumenhao,@dianhaua,@bangongshi)", SqlCommandGenerator.Context.SqlText);
         }
-
-        [Test]
-        public void Delete()
+        [Fact]
+        public void Delete_Test()
         {
         }
-
-        [Test]
-        public void Update()
+        [Fact]
+        public void Update_Test()
         {
         }
-
-        [Test]
-        public void Query()
+        [Fact]
+        public void Query_Test()
         {
             //var aa=base.Query();
         }

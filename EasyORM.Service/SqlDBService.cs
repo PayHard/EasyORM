@@ -23,7 +23,7 @@ namespace EasyORM.Service
             conn = new SqlConnection(conStr);
         }
 
-        internal SqlCommandGenerator SqlCommandGenerator = new SqlCommandGenerator();
+        public SqlCommandGenerator SqlCommandGenerator = new SqlCommandGenerator();
 
         #region 添加
 
