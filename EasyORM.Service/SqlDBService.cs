@@ -79,7 +79,7 @@ namespace EasyORM.Service
             //验证参数
 
             //拼装数据库语句
-            var sqlText = SqlCommandGenerator.Add(entity);
+            var sqlText = SqlCommandGenerator.Update(entity);
             //执行
             conn.Open();
             ExecuteNonQuery(sqlText);

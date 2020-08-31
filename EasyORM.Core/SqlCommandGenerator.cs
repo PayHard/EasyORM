@@ -106,6 +106,22 @@ namespace EasyORM.Core
             string columnName = string.Empty;
             foreach (PropertyInfo propertyInfo in propertyInfos)
             {
+                //自增字段不拼进字段
+                if (propertyInfo.GetCustomAttribute(typeof(AutoAttribute), true) is AutoAttribute)
+                {
+                    //默认主键是Where条件
+                    if (propertyInfo.GetCustomAttribute(typeof(KeyAttribute), true) is KeyAttribute keyColumn)
+                    {
+                        builder_behind.Append(" WHERE ");
+                        builder_behind.Append(keyColumn.GetName(propertyInfo.Name));
+                        builder_behind.Append("=");
+                        builder_behind.Append($"@t");
+                        columnName = keyColumn.GetName(propertyInfo.Name).Replace("[", "").Replace("]", "");
+                        builder_behind.Append(columnName);
+                        Context.Parameters.AddOrUpdate($"@t{columnName}", propertyInfo.GetValue(entity));
+                    }
+                    continue;
+                }
                 //Column
                 if (propertyInfo.GetCustomAttribute(typeof(ColumnAttribute), true) is ColumnAttribute column)
                 {

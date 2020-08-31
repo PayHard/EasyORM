@@ -10,7 +10,7 @@ namespace EasyORM.Core.EntityAttribute
     /// 主键
     /// </summary>
     [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class KeyAttribute : Attribute
+    public class KeyAttribute : ColumnAttribute
     {
     }
 }
